@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pasar Kangkung Segar</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/image.png" type="image/png">
 </head>
 <body>
   <header>
     <h1>Pasar Kangkung Segar</h1>
-    <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#kontak">Kontak</a>
+    <nav id="navbar">
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -56,8 +59,28 @@
   </section>
 
   <footer id="kontak">
-    <p>Hubungi kami di: <a href="mailto:info@pasarkangkung.com">info@pasarkangkung.com</a></p>
+    <p>Hubungi kami di:</p>
+    <div class="sosial">
+      <a href="https://wa.me/6283133565067" target="_blank" title="WhatsApp">
+        <img src="images/wa.png" alt="WhatsApp">
+      </a>
+      <a href="https://instagram.com/zzkykhld_" target="_blank" title="Instagram">
+        <img src="images/ig.png" alt="Instagram">
+      </a>
+      <a href="https://facebook.com/" target="_blank" title="Facebook">
+        <img src="images/fb.png" alt="Facebook">
+      </a>
+    </div>
     <p>© 2025 Pasar Kangkung Segar</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
