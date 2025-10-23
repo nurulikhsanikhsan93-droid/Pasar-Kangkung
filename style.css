@@ -6,20 +6,48 @@ body {
   color: #333;
 }
 
+/* === HEADER & NAVBAR === */
 header {
   background-color: #1b5e20;
   color: white;
-  padding: 15px;
-  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-nav a {
+nav {
+  position: relative;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: bold;
 }
 
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* === HERO === */
 .hero {
   position: relative;
   text-align: center;
@@ -41,6 +69,7 @@ nav a {
   border-radius: 10px;
 }
 
+/* === PRODUK === */
 section {
   padding: 20px;
   text-align: center;
@@ -59,6 +88,11 @@ section {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 280px;
   padding: 10px;
+  transition: transform .2s;
+}
+
+.produk-card:hover {
+  transform: scale(1.03);
 }
 
 .produk-card img {
@@ -66,19 +100,56 @@ section {
   border-radius: 10px;
 }
 
+/* === FOOTER === */
 footer {
   background-color: #1b5e20;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   font-size: 14px;
 }
 
-/* Responsif untuk HP */
+footer .sosial {
+  margin: 10px 0;
+}
+
+footer .sosial img {
+  width: 30px;
+  margin: 0 8px;
+  transition: transform 0.2s;
+}
+
+footer .sosial img:hover {
+  transform: scale(1.1);
+}
+
+/* === RESPONSIVE NAVBAR === */
 @media (max-width: 768px) {
-  nav a {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
     display: block;
-    margin: 8px 0;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1b5e20;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.3);
   }
 
   .hero-text {
